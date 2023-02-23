@@ -33,18 +33,26 @@ main()
 	         }
 	      }
 	   }
-	printf("%s", str);
+
+		
 	for(int i = 0; i < dem; i++)
 	{
 		int dem1 = 0;
 		for(int j = 0; j < dem; j++)
 		{
-			if(str[i] == str[j])
+			if(str[i] != ' ')
 			{
-				dem1++;
+				if(str[i] == str[j])
+				{
+					dem1++;
+				}
 			}
 		}
-		printf("%d", dem1);
+		if(str[i] != ' ')
+		{
+			printf("%s", str);
+			printf("%d", dem1);
+		}	
 	}
 }
 //		int dem1 = 0;
