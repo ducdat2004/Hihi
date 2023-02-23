@@ -2,28 +2,60 @@
 
 main()
 {
-	int n;
-	scanf("%d", &n);
-	int a[n];
-	for(int i; i < n; i++)
-	{
-		scanf("%d", &a[i]);
-	}
-	int max = a[0];
+	char str[500];
 	int dem = 0;
-	for(int i; i < n; i++)
+	for(int i = 0; i < 500; i++)
 	{
-		if(a[i] > max)
+		scanf("%c", &str[i]);
+		if(str[i] == '\n')
 		{
-			max = a[i];
+			break;
 		}
+		dem++;
 	}
-	for(int i; i < n; i++)
+//	for(int i = 0; i < dem; i++)
+//    {
+//    	for(int j = 0; j < 128; ++j)
+//		{
+//	    	if(str[i] == )		
+//	        printf("%4c\n", j, j);
+//   		}
+//	}
+
+	char temp;
+	for (int i = 0; i < dem-1; i++) 
+		{
+	      for (int j = i+1; j < dem; j++) {
+	         if (str[i] > str[j]) {
+	            temp = str[i];
+	            str[i] = str[j];
+	            str[j] = temp;
+	         }
+	      }
+	   }
+	printf("%s", str);
+	for(int i = 0; i < dem; i++)
 	{
-		if(a[i] == max)
+		int dem1 = 0;
+		for(int j = 0; j < dem; j++)
+		{
+			if(str[i] == str[j])
 			{
-				dem++;
+				dem1++;
 			}
+		}
+		printf("%d", dem1);
 	}
-	printf("%d %d", max, dem);
 }
+//		int dem1 = 0;
+//		for(int j = 0; j < dem; j++)
+//		{
+//			if(str[i] == str[j])
+//			{
+//				dem1++;
+//			}
+//		}
+		
+//		printf("%4d\n", dem1);
+	
+
