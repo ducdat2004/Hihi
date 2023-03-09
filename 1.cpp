@@ -1,69 +1,24 @@
 #include <stdio.h>
-
-main()
+#include <string.h>
+#include <string>
+#include <stdlib.h>
+char * XD (char * st)
 {
-	char str[500];
-	int dem = 0;
-	for(int i = 0; i < 500; i++)
+	for(int i = 0; i < strlen(st); i++)
 	{
-		scanf("%c", &str[i]);
-		if(str[i] == '\n')
+		if(st[i] != 32)
 		{
-			break;
+			printf("%c", st[i]);
 		}
-		dem++;
-	}
-//	for(int i = 0; i < dem; i++)
-//    {
-//    	for(int j = 0; j < 128; ++j)
-//		{
-//	    	if(str[i] == )		
-//	        printf("%4c\n", j, j);
-//   		}
-//	}
-
-	char temp;
-	for (int i = 0; i < dem-1; i++) 
+		else
 		{
-	      for (int j = i+1; j < dem; j++) {
-	         if (str[i] > str[j]) {
-	            temp = str[i];
-	            str[i] = str[j];
-	            str[j] = temp;
-	         }
-	      }
-	   }
-
-		
-	for(int i = 0; i < dem; i++)
-	{
-		int dem1 = 0;
-		for(int j = 0; j < dem; j++)
-		{
-			if(str[i] != ' ')
-			{
-				if(str[i] == str[j])
-				{
-					dem1++;
-				}
-			}
+			printf("\n");
 		}
-		if(str[i] != ' ')
-		{
-			printf("%s", str);
-			printf("%d", dem1);
-		}	
 	}
 }
-//		int dem1 = 0;
-//		for(int j = 0; j < dem; j++)
-//		{
-//			if(str[i] == str[j])
-//			{
-//				dem1++;
-//			}
-//		}
-		
-//		printf("%4d\n", dem1);
-	
-
+main()
+{
+	char * st = (char*)malloc(20);
+	gets(st);
+	XD(st);
+}

@@ -1,57 +1,41 @@
 #include <stdio.h>
-#include <string.h>
 #include <string>
+#include <string.h>
 #include <stdlib.h>
-char* KTT(char * st, char * a)
+main()
 {
-	int b = 0;
-	char c;
-	printf("\n\nXoa ky tu trang\n\n");
+	char * st = (char*)malloc(20);
+	gets(st);
+	int dem1 = 0, dem2 = 0;
 	for(int i = 0; i < strlen(st); i++)
 	{
-		c = st[i];
-		if(c == 32)
+		for(int j = 65; j <= 90; j++)
 		{
-			continue;
-		}
-		a[b++] = c;
-	}
-	return a;
-}
-char * Tim (char * st, char * c)
-{
-	for(int i = 0; i < strlen(st); i++)
-	{
-		for(int j = 0; j < strlen(c); j++)
-		{
-			if(st[i] == c[j])
+			if(st[i] == j)
 			{
-				printf(n"%d", i);
+				dem1++;
+			}
+		}
+		for(int k = 97; k <= 122; k++)
+		{
+			if(st[i] == k)
+			{
+				dem2++;
 			}
 		}
 	}
-}
-char * XD (char * st)
-{
-	for(int i = 0; i < strlen(st); i++)
+	if(dem1 > dem2)
 	{
-		if(st[i] != 32)
-			printf("%c", st[i]);	
-		else
-			printf("\n");
+		for(int i = 0; i < strlen(st); i++)
+		{
+			putchar(toupper(st[i]));
+		}
 	}
-}
-
-main()
-{
-	char * st;
-	char * a = (char * )malloc(20);
-	st = (char*)malloc(20);
-	char * c = (char * )malloc(20);
-	gets(st);
-//	gets(c);
-//	Tim(st, c);
-	printf("In cac tu trong chuoi '%s' thanh tung dong`\n\n", st);
-	XD(st);
-	puts(KTT(st, a));
+	else
+	{
+		for(int i = 0; i < strlen(st); i++)
+		{
+			putchar(tolower(st[i]));
+		}
+	}
 }
